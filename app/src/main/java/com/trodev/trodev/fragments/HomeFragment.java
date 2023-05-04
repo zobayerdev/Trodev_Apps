@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.android.material.card.MaterialCardView;
 import com.trodev.trodev.activities.GraphicsDesignActivity;
@@ -38,6 +39,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), ApplicationListActivity.class));
+                Toast.makeText(getContext(), "All Applications are here...!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -45,6 +47,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), SoftwareListActivity.class));
+                Toast.makeText(getContext(), "All Software are here...!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -52,6 +55,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), GraphicsDesignActivity.class));
+                Toast.makeText(getContext(), "All Graphics Design are here...!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -59,6 +63,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), UiDesignActivity.class));
+                Toast.makeText(getContext(), "All UI/UX Design are here...!", Toast.LENGTH_SHORT).show();
             }
         });
 

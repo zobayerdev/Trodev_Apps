@@ -24,9 +24,9 @@ import com.trodev.trodev.R;
 public class DeveloperFragment extends Fragment {
 
     private LinearLayout facebook, github, linkedin, gmail;
-    private ImageView jubu_facebook, jubu_github, jubu_linkedin, jubu_gmail ;
-    private LinearLayout rubayet_facebook, rubayet_github, rubayet_linkedin, rubayet_gmail ;
-    private ImageView pias_facebook, pias_github, pias_linkedin, pias_gmail ;
+    private ImageView jubu_facebook, jubu_github, jubu_linkedin, jubu_gmail;
+    private LinearLayout shantu_facebook, shantu_github, shantu_linkedin, shantu_gmail;
+    private ImageView zayed_facebook, zayed_github, zayed_linkedin, zayed_gmail;
 
     public DeveloperFragment() {
         // Required empty public constructor
@@ -39,28 +39,28 @@ public class DeveloperFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_developer, container, false);
 
+        /*zobayer hasan nayem*/
         facebook = view.findViewById(R.id.facebook);
         github = view.findViewById(R.id.github);
         linkedin = view.findViewById(R.id.linkedin);
         gmail = view.findViewById(R.id.gmail);
 
-        //jubayer hossain
+        /*jubayer hossain*/
         jubu_facebook = view.findViewById(R.id.jubu_facebook);
         jubu_github = view.findViewById(R.id.jubu_github);
         jubu_linkedin = view.findViewById(R.id.jubu_linkedin);
         jubu_gmail = view.findViewById(R.id.jubu_gmail);
 
-        //rubayet ifti
-        rubayet_facebook = view.findViewById(R.id.rubayet_facebook);
-        rubayet_github = view.findViewById(R.id.rubayet_github);
-        rubayet_gmail = view.findViewById(R.id.rubayet_gmail);
-        rubayet_linkedin = view.findViewById(R.id.rubayet_linkedin);
+        /*shahida sultana shantu*/
+        shantu_facebook = view.findViewById(R.id.shantu_facebook);
+        shantu_gmail = view.findViewById(R.id.shantu_gmail);
+        shantu_linkedin = view.findViewById(R.id.shantu_linkedin);
 
-        //pias
-        pias_facebook = view.findViewById(R.id.pias_facebook);
-        pias_github = view.findViewById(R.id.pias_github);
-        pias_gmail = view.findViewById(R.id.pias_gmail);
-        pias_linkedin = view.findViewById(R.id.pias_linkedin);
+        /*zayed hasan nayem*/
+        zayed_facebook = view.findViewById(R.id.zayed_facebook);
+        zayed_github = view.findViewById(R.id.zayed_github);
+        zayed_gmail = view.findViewById(R.id.zayed_gmail);
+        zayed_linkedin = view.findViewById(R.id.zayed_linkedin);
 
 
         //facebook zobayer
@@ -153,29 +153,14 @@ public class DeveloperFragment extends Fragment {
             }
         });
 
-
-        rubayet_facebook.setOnClickListener(new View.OnClickListener() {
+        shantu_facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(getOpenFacebookIntentrubayet());
             }
         });
 
-        rubayet_github.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //  Intent appIntent = new Intent(Intent.ACTION_VIEW);
-                Intent webIntent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://github.com/SMd-Rubayet-Islam-Ifti"));
-                try {
-                    startActivity(webIntent);
-                } catch (ActivityNotFoundException ex) {
-                    startActivity(webIntent);
-                }
-            }
-        });
-
-        rubayet_linkedin.setOnClickListener(new View.OnClickListener() {
+        shantu_linkedin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("linkedin://you"));
@@ -184,11 +169,11 @@ public class DeveloperFragment extends Fragment {
             }
         });
 
-        rubayet_gmail.setOnClickListener(new View.OnClickListener() {
+        shantu_gmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "rubayet.trodev@gmail.com"));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "shahidashantu@gmail.com"));
                     intent.putExtra(Intent.EXTRA_SUBJECT, "your_subject");
                     intent.putExtra(Intent.EXTRA_TEXT, "your_text");
                     startActivity(intent);
@@ -199,20 +184,19 @@ public class DeveloperFragment extends Fragment {
         });
 
 
-
-        pias_facebook.setOnClickListener(new View.OnClickListener() {
+        zayed_facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(getOpenFacebookIntentpiash());
             }
         });
 
-        pias_github.setOnClickListener(new View.OnClickListener() {
+        zayed_github.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //  Intent appIntent = new Intent(Intent.ACTION_VIEW);
                 Intent webIntent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://github.com/spias8"));
+                        Uri.parse("https://github.com/zayedndev"));
                 try {
                     startActivity(webIntent);
                 } catch (ActivityNotFoundException ex) {
@@ -221,20 +205,20 @@ public class DeveloperFragment extends Fragment {
             }
         });
 
-        pias_linkedin.setOnClickListener(new View.OnClickListener() {
+        zayed_linkedin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("linkedin://you"));
-                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/piasmiah/"));
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/zayed-hasan-noman-a3a9b0248"));
                 startActivity(intent);
             }
         });
 
-       pias_gmail.setOnClickListener(new View.OnClickListener() {
+        zayed_gmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "pias.trodev@gmail.com"));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "mdzayed.dev@gmail.com"));
                     intent.putExtra(Intent.EXTRA_SUBJECT, "your_subject");
                     intent.putExtra(Intent.EXTRA_TEXT, "your_text");
                     startActivity(intent);
@@ -247,13 +231,12 @@ public class DeveloperFragment extends Fragment {
         return view;
     }
 
-
-
     /*here zobayer hasan activity*/
     private PackageManager getPackageManager() {
-
         return null;
     }
+
+    /*zobayer hasan noman*/
     public Intent getOpenFacebookIntent() {
         try {
             getPackageManager().getPackageInfo("com.facebook.katana", 0);
@@ -263,7 +246,7 @@ public class DeveloperFragment extends Fragment {
         }
     }
 
-    // jubayer hossain
+    /*jubayer hossain*/
     private Intent getOpenFacebookIntentjubu() {
         try {
             getPackageManager().getPackageInfo("com.facebook.katana", 0);
@@ -273,22 +256,23 @@ public class DeveloperFragment extends Fragment {
         }
     }
 
-    // rubayet ifti
+    /*shahida shantu*/
     private Intent getOpenFacebookIntentrubayet() {
         try {
             getPackageManager().getPackageInfo("com.facebook.katana", 0);
-            return new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/https://www.facebook.com/rubayetislamifti/"));
+            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/shahidasultana.shantu"));
         } catch (Exception e) {
-            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/rubayetislamifti/"));
+            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/shahidasultana.shantu"));
         }
     }
 
+    /*zayed hasan noman*/
     private Intent getOpenFacebookIntentpiash() {
         try {
             getPackageManager().getPackageInfo("com.facebook.katana", 0);
-            return new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/https://www.facebook.com/mued.hasan.08/"));
+            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/zayedhasan.noman"));
         } catch (Exception e) {
-            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/mued.hasan.08/"));
+            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/zayedhasan.noman"));
         }
     }
 

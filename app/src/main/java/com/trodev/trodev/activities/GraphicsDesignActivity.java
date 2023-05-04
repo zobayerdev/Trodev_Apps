@@ -26,7 +26,7 @@ import java.util.List;
 public class GraphicsDesignActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private RecyclerView graphics;
-    private List<GraphicsData> list1;
+    private List<GraphicsData> graphicsList;
     private GraphicsAdapter adapter;
     private DatabaseReference reference, dbRef;
 
@@ -66,7 +66,7 @@ public class GraphicsDesignActivity extends AppCompatActivity {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                list1 = new ArrayList<>();
+                graphicsList = new ArrayList<>();
                 if (!dataSnapshot.exists()) {
 
                     progressDialog.show();
@@ -76,12 +76,12 @@ public class GraphicsDesignActivity extends AppCompatActivity {
                     graphics.setVisibility(View.VISIBLE);
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         GraphicsData data = snapshot.getValue(GraphicsData.class); // eikhane sob student hobe teacher thakle
-                        list1.add(data);
-                        Toast.makeText(GraphicsDesignActivity.this, "All Graphics Design's are here...!", Toast.LENGTH_SHORT).show();
+                        graphicsList.add(data);
+
                     }
                     graphics.setHasFixedSize(true);
                     graphics.setLayoutManager(new LinearLayoutManager(GraphicsDesignActivity.this));
-                    adapter = new GraphicsAdapter(list1, GraphicsDesignActivity.this, "Graphics Design");
+                    adapter = new GraphicsAdapter(graphicsList, GraphicsDesignActivity.this, "Graphics Design");
                     graphics.setAdapter(adapter);
                 }
             }

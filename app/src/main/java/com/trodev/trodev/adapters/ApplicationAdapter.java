@@ -47,12 +47,14 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
 
         ApplicationData item = list.get(position);
 
+        /*set text on text views*/
         holder.name.setText(item.getName());
         holder.development.setText(item.getDevelopment());
         holder.types.setText(item.getType());
         holder.description.setText(item.getDescription());
        // holder.url.setText(item.getUrl());
 
+        /*holder click on url*/
         holder.playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +64,7 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
             }
         });
 
-
+/*set image on imageview on android studio images*/
         try {
             Picasso.get().load(item.getImage()).into(holder.image);
         } catch (Exception e) {

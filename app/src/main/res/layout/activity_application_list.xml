@@ -10,7 +10,7 @@
         android:id="@+id/applicationRv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
+        tools:listitem="@layout/application_item_layout"
         android:nestedScrollingEnabled="false"/>
 
 </LinearLayout>
