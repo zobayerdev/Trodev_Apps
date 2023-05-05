@@ -19,18 +19,15 @@ import com.trodev.trodev.models.GraphicsData;
 import com.trodev.trodev.R;
 
 import java.util.List;
-
 public class GraphicsAdapter extends RecyclerView.Adapter<GraphicsAdapter.GraphicsViewAdapter> {
     private List<GraphicsData> list;
     private Context context;
     private String category;
-
     public GraphicsAdapter(List<GraphicsData> list, Context context, String category) {
         this.list = list;
         this.context = context;
         this.category = category;
     }
-
     @NonNull
     @Override
     public GraphicsViewAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -46,12 +43,12 @@ public class GraphicsAdapter extends RecyclerView.Adapter<GraphicsAdapter.Graphi
         // set software data into holder position
         GraphicsData item = list.get(position);
 
+        // init holder
         holder.name.setText(item.getName());
         holder.development.setText(item.getDevelopment());
         holder.types.setText(item.getType());
         holder.description.setText(item.getDescription());
-    //    holder.url.setText(item.getUrl());
-
+    //holder.url.setText(item.getUrl());
 
         holder.graphicsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +75,6 @@ public class GraphicsAdapter extends RecyclerView.Adapter<GraphicsAdapter.Graphi
         private TextView name, development, types, description, url;
         private ImageView image;
         private MaterialCardView graphicsBtn;
-
         public GraphicsViewAdapter(@NonNull View itemView) {
             super(itemView);
 
@@ -89,7 +85,7 @@ public class GraphicsAdapter extends RecyclerView.Adapter<GraphicsAdapter.Graphi
             description = itemView.findViewById(R.id.descriptionTv);
 
             // apps image
-            image = itemView.findViewById(R.id.studentImage);
+            image = itemView.findViewById(R.id.graphicsIv);
 
             //init material card view
             graphicsBtn = itemView.findViewById(R.id.graphicsBtn);
