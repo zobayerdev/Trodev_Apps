@@ -27,7 +27,7 @@ public class UiDesignActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
     private RecyclerView uiDesign;
-    private List<UiData> list1;
+    private List<UiData> uiList;
     private UiAdapter adapter;
     private DatabaseReference reference, dbRef;
 
@@ -66,7 +66,7 @@ public class UiDesignActivity extends AppCompatActivity {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                list1 = new ArrayList<>();
+                uiList = new ArrayList<>();
                 if (!dataSnapshot.exists()) {
 
                     progressDialog.show();
@@ -76,15 +76,14 @@ public class UiDesignActivity extends AppCompatActivity {
                    progressDialog.hide();
                     uiDesign.setVisibility(View.VISIBLE);
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        UiData data = snapshot.getValue(UiData.class); // eikhane sob student hobe teacher thakle
-                        list1.add(data);
-                        Toast.makeText(UiDesignActivity.this, "All User Interface Design are here...!", Toast.LENGTH_SHORT).show();
+                        UiData data = snapshot.getValue(UiData.class);
+                        uiList.add(data);
                     }
 
                     progressDialog.hide();
                     uiDesign.setHasFixedSize(true);
                     uiDesign.setLayoutManager(new LinearLayoutManager(UiDesignActivity.this));
-                    adapter = new UiAdapter(list1, UiDesignActivity.this, "UI Design");
+                    adapter = new UiAdapter(uiList, UiDesignActivity.this, "UI Design");
                     uiDesign.setAdapter(adapter);
                 }
             }

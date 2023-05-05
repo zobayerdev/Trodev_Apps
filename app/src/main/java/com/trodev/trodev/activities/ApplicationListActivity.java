@@ -27,7 +27,7 @@ import java.util.List;
 public class ApplicationListActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private RecyclerView applicationRv;
-    private List<ApplicationData> list1;
+    private List<ApplicationData> appsList;
     private ApplicationAdapter adapter;
     private DatabaseReference reference, dbRef;
 
@@ -49,8 +49,10 @@ public class ApplicationListActivity extends AppCompatActivity {
         // Recycler view finding
         applicationRv = findViewById(R.id.applicationRv);
 
+        /*references add on android studio*/
         reference = FirebaseDatabase.getInstance().getReference().child("Trodev");
 
+        /*start method to show data*/
         Application();
     }
 
@@ -66,7 +68,7 @@ public class ApplicationListActivity extends AppCompatActivity {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                list1 = new ArrayList<>();
+                appsList = new ArrayList<>();
                 if (!dataSnapshot.exists()) {
                     progressDialog.show();
                     applicationRv.setVisibility(View.GONE); // change
@@ -75,15 +77,14 @@ public class ApplicationListActivity extends AppCompatActivity {
                     applicationRv.setVisibility(View.VISIBLE);
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         ApplicationData data = snapshot.getValue(ApplicationData.class);
-                        list1.add(data);
+                        appsList.add(data);
 
-                        Toast.makeText(ApplicationListActivity.this, "All Applications are here...!", Toast.LENGTH_SHORT).show();
                     }
 
                     progressDialog.hide();
                     applicationRv.setHasFixedSize(true);
                     applicationRv.setLayoutManager(new LinearLayoutManager(ApplicationListActivity.this));
-                    adapter = new ApplicationAdapter(list1, ApplicationListActivity.this, "Application");
+                    adapter = new ApplicationAdapter(appsList, ApplicationListActivity.this, "Application");
                     applicationRv.setAdapter(adapter);
                 }
             }

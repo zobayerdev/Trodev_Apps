@@ -48,6 +48,7 @@
                         android:layout_height="wrap_content"
                         android:text="Software Name: "
                         android:textColor="@color/black"
+                        android:fontFamily="@font/mulish_bold"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -57,7 +58,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:text="Software Name"
-                        android:fontFamily="@font/trebuc"
+                        android:fontFamily="@font/sf_ns_text"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -73,6 +74,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Development Tools: "
+                        android:fontFamily="@font/mulish_bold"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -83,7 +85,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:text="Development Tools "
-                        android:fontFamily="@font/trebuc"
+                        android:fontFamily="@font/sf_ns_text"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -100,6 +102,7 @@
                         android:layout_height="wrap_content"
                         android:text="Software Types: "
                         android:textColor="@color/black"
+                        android:fontFamily="@font/mulish_bold"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -109,7 +112,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:text="Apps Types"
-                        android:fontFamily="@font/trebuc"
+                        android:fontFamily="@font/sf_ns_text"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -127,6 +130,7 @@
                         android:layout_height="wrap_content"
                         android:text="Description: "
                         android:textColor="@color/black"
+                        android:fontFamily="@font/mulish_bold"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -137,7 +141,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="5dp"
                         android:text="Description"
-                        android:fontFamily="@font/trebuc"
+                        android:fontFamily="@font/sf_ns_text"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -147,7 +151,8 @@
                     android:id="@+id/softBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginStart="5dp"
                     android:backgroundTint="@color/white"
                     android:src="@drawable/google_play"
                     android:text="Play store"

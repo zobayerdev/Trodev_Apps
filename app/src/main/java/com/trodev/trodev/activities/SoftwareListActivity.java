@@ -27,7 +27,7 @@ public class SoftwareListActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
     private RecyclerView software;
-    private List<SoftwareData> list1;
+    private List<SoftwareData> softList;
     private SoftwareAdapter adapter;
     private DatabaseReference reference, dbRef;
 
@@ -67,7 +67,7 @@ public class SoftwareListActivity extends AppCompatActivity {
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                list1 = new ArrayList<>();
+                softList = new ArrayList<>();
                 if (!dataSnapshot.exists()) {
 
                     progressDialog.show();
@@ -78,14 +78,12 @@ public class SoftwareListActivity extends AppCompatActivity {
                     software.setVisibility(View.VISIBLE);
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         SoftwareData data = snapshot.getValue(SoftwareData.class); // eikhane sob student hobe teacher thakle
-                        list1.add(data);
-
-                        Toast.makeText(SoftwareListActivity.this, "All Software's are here...!", Toast.LENGTH_SHORT).show();
+                        softList.add(data);
                     }
                     progressDialog.hide();
                     software.setHasFixedSize(true);
                     software.setLayoutManager(new LinearLayoutManager(SoftwareListActivity.this));
-                    adapter = new SoftwareAdapter(list1, SoftwareListActivity.this, "Software");
+                    adapter = new SoftwareAdapter(softList, SoftwareListActivity.this, "Software");
                     software.setAdapter(adapter);
                 }
             }
